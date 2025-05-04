@@ -151,7 +151,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		<p><strong>Notice:</strong> This service requires Internet Explorer 6.0 or higher with 128-bit encryption enabled.</p>
 		<div class="footer">
 			&copy; 2003 MyBank Corp. All Rights Reserved.<br>
-			Member FDIC | Equal Housing Lender
 		</div>
 	</div>
 </body>
