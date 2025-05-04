@@ -22,6 +22,8 @@ This project is a simple **honeypot web server** written in Go, designed to simu
 - Random response delays and server headers to increase authenticity.
 - Dockerized for easy deployment and resource limits.
 - /login.php — Simulates a login form and responds with randomized outcomes:
+
+
 (truncated log)
 ```json
 {
@@ -32,9 +34,6 @@ This project is a simple **honeypot web server** written in Go, designed to simu
   "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:115.0) Gecko/20100101 Firefox/115.19.0",
   "headers": {
    [...]
-   "User-Agent": [
-      "Mozilla/5.0 (X11; Linux x86_64; rv:115.0) Gecko/20100101 Firefox/115.19.0"
-    ]
   },
   "event": "login attempt: Login successful. Redirecting... (username: test, password: test)",
   "status_code": 200
