@@ -19,9 +19,33 @@ This project is a simple **honeypot web server** written in Go, designed to simu
 	"status_code":200
 }
 ```
-- Mimics a vulnerable system with fake `admin.php`, `cgi-bin`, and outdated headers (`Apache`, `PHP`).
 - Random response delays and server headers to increase authenticity.
 - Dockerized for easy deployment and resource limits.
+- /login.php — Simulates a login form and responds with randomized outcomes:
+(truncated log)
+```json
+{
+  "timestamp": "2025-05-04T09:27:19Z",
+  "ip": "172.21.0.1:47728",
+  "method": "POST",
+  "path": "/login.php",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:115.0) Gecko/20100101 Firefox/115.19.0",
+  "headers": {
+   [...]
+   "User-Agent": [
+      "Mozilla/5.0 (X11; Linux x86_64; rv:115.0) Gecko/20100101 Firefox/115.19.0"
+    ]
+  },
+  "event": "login attempt: Login successful. Redirecting... (username: test, password: test)",
+  "status_code": 200
+}
+
+```
+ - Login successful, Incorrect username, Incorrect password, or Account temporarily locked.
+- /admin.php — Mimics an admin panel with a delayed response to simulate processing.
+- HTTP headers — Randomized fake server headers to impersonate outdated stacks:
+ - Apache versions (e.g., Apache/2.2.16) and PHP versions (e.g., PHP/5.2.17).
+
 
 ## 🚀 Quick Start
 
