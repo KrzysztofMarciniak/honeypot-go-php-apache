@@ -1,0 +1,19 @@
+services:
+  go_honeypot:
+    image: golang:alpine
+    container_name: go_honeypot
+    working_dir: /app
+    volumes:
+      - ./honeypot.go:/app/honeypot.go
+      - ./honeypot_access.json:/app/honeypot_access.json
+      - ./honeypot_errors.json:/app/honeypot_errors.json
+    command: ["go", "run", "honeypot.go"]
+    ports:
+      - "8080:8080"
+    networks:
+      - isolated_net
+    mem_limit: 256m
+    cpus: 2
+networks:
+  isolated_net:
+    driver: bridge
