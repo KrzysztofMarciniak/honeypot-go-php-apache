@@ -1,4 +1,5 @@
 # 🕵️ Go Honeypot
+![screenshot](https://github.com/user-attachments/assets/aaabd3d8-8950-4dc1-9fde-d880cdf35253)
 
 This project is a simple **honeypot web server** written in Go, designed to simulate a fake online banking site. It logs access attempts, suspicious activity, and fake login interactions in structured JSON format for analysis.
 
